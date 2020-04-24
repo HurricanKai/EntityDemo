@@ -3,13 +3,13 @@
     <PropertyGroup>
         <TargetFramework>netcoreapp5.0</TargetFramework>
         <UserSecretsId>dotnet-A-E57A7F76-04D4-4EFD-B6EB-F7C5F820B01B</UserSecretsId>
+        <AssemblyName>EntityDemo</AssemblyName>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="MassTransit" Version="6.2.5-develop.2591" />
         <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="6.2.5-develop.2591" />
-        <PackageReference Include="MassTransit.Extensions.Logging" Version="5.5.6" />
         <PackageReference Include="MassTransit.RabbitMQ" Version="6.2.5-develop.2591" />
-        <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0-preview.2.20160.3" />
+        <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0-preview.3.20215.2" />
     </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace EntityDemo
 {
@@ -43,6 +44,18 @@ namespace EntityDemo
                 throw new ArgumentOutOfRangeException(nameof(type), "Mismatched Type");
 
             return _metadataSerializer.Serialize(metadata.Type, metadata.Value);
+        }
+
+        public (Vector3, Vector3) GetTransform(Guid entityId)
+        {
+            var entity = _entities[entityId];
+            return (entity.Position, entity.Velocity);
+        }
+
+        public void UpdateTransform(Guid entityId, Vector3 position, Vector3 velocity)
+        {
+            _entities[entityId].Position = position;
+            _entities[entityId].Velocity = velocity;
         }
     }
 }

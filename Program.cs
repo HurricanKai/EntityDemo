@@ -19,9 +19,6 @@ namespace EntityDemo
                     services.AddHostedService<Test>();
                     services.AddHostedService<BusService>();
                     services.AddSingleton<IEntityManager, LocalEntityManager>();
-                    /*services.AddSingleton<IConsumer<GetEntityMetadataRequest>, GetEntityMetadataConsumer>();
-                    services.AddSingleton<IConsumer<UpdateEntityMetadata>, UpdateEntityMetadataConsumer>();
-                    services.AddSingleton<IConsumer<CreateEntityRequest>, CreateEntityConsumer>();*/
                     services.AddSingleton<IEntityResolver, EntityResolver>();
                     services.AddScoped<IEntityMetadataSerializer, EntityMetadataSerializer>();
                     
@@ -38,6 +35,7 @@ namespace EntityDemo
 
                         configurator.AddRequestClient<GetEntityMetadataRequest>();
                         configurator.AddRequestClient<CreateEntityRequest>();
+                        configurator.AddRequestClient<GetEntityTransformRequest>();
                     }));
                 });
     }
